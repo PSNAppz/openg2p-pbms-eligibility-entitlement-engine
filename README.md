@@ -1,2 +1,3 @@
-# openg2p-pbms-eligibility-entitlement-engine
-Decoupled Eligibility and Entitlement Engine for PBMS
+# openg2p-pbms-bg-tasks
+Decoupled BG Tasks for PBMS
+
