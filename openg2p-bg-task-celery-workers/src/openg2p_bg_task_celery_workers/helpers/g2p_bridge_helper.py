@@ -4,7 +4,6 @@ from datetime import datetime, timezone
 
 import requests
 from openg2p_bg_task_models.schemas import Disbursement
-from openg2p_fastapi_common.schemas import G2PRequestHeader
 from openg2p_fastapi_common.utils.crypto import KeymanagerCryptoHelper
 from openg2p_g2p_bridge_models.schemas import (
     DisbursementEnvelopeRequest,
@@ -14,6 +13,7 @@ from openg2p_g2p_bridge_models.schemas import (
     DisbursementRequest,
     DisbursementRequestBody,
     DisbursementResponse,
+    G2PRequestHeader,
 )
 
 
@@ -122,7 +122,7 @@ class G2PBridgeDisbursementHelper:
         disbursement_header = G2PRequestHeader(
             sender_app_mnemonic=self._config.keymanager_sign_app_id,
             sender_app_url="",
-            request_id="string",
+            request_id=uuid.uuid4().hex,
             request_timestamp=datetime.now(timezone.utc).isoformat(),
             instance_id="string",
         )
